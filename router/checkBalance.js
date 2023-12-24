@@ -10,7 +10,7 @@ router.post('/:address/:blockchain/:network', async (req, res) => {
     const network = req.params.network;
 
     try {
-        const response = await axios.get(`https://api.blockcypher.com/v1/${blockchain}/${network}/addrs/${address}/balance`);
+        const response = await axios.get(`${process.env.BLOCKCYPHER_API_URL}`.replace(':blockchain', blockchain).replace(':network', network).replace(':address', address));
         const balanceInSmalletsUnit = response.data.balance;
         let balance = '';
 

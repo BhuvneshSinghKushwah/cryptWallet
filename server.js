@@ -7,6 +7,7 @@ const app = express();
 //Routes
 const checkBalanceRouter = require('./router/checkBalance');
 const createWalletRouter = require('./router/createWallet');
+const seeWalletRouter = require('./router/seeWallets');
 
 //Mongoose Database Connection
 mongoose.connect(process.env.DATABASE_URL);
@@ -20,6 +21,8 @@ app.use(express.json());
 app.use('/checkBalance', checkBalanceRouter);
 //create wallet using bip39 mnemonic phrase.
 app.use('/createWallet', createWalletRouter);
+//returns a json of all the wallets stored in mongodb
+app.use('/seeWallets', seeWalletRouter);
 
 app.use('/', (req, res) => res.send('<h1>Welcome to Crypt Wallet</h1>'));
 

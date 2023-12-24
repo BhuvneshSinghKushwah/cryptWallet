@@ -5,8 +5,27 @@ const ecc = require('tiny-secp256k1')
 const bip32 = BIP32Factory(ecc)
 const bip39 = require('bip39');
 
+const Wallet = require('../model/wallets');
+
 const router = express.Router();
 router.use(express.json());
+
+const addToMongoose = (phrase, address, pubKey, prvKey, blockchain) => {
+    const newWallet = new Wallet({
+        phrase: phrase,
+        address: address,
+        pubKey: pubKey,
+        prvKey: prvKey,
+        blockchain: blockchain
+    })
+
+    try {
+        newWallet.save();
+        console.log('data successfully saved');
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 router.post('/:blockchain', async (req, res) => {
     const mnemonic = req.body.phrase;
@@ -22,12 +41,15 @@ router.post('/:blockchain', async (req, res) => {
 
         const { address } = bitcoin.payments.p2pkh({ pubkey: child.publicKey });
         const publicKey = child.publicKey.toString('hex');
-        console.log(publicKey);
-        res.json({ 
+
+        await addToMongoose(mnemonic, address, publicKey, privateKey, blockchain);
+
+        res.status(200).json({
+            message: 'Wallet information saved successfully',
             address: address,
-            privatekey: privateKey,
-            publickey: publicKey,
-        })
+            publicKey: publicKey,
+            blockchain: blockchain
+        });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
