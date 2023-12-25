@@ -1,8 +1,8 @@
 Functionalites: 
 1. Check Wallet Balance. (DONE) (used blockcypher api to fetch json by providing address, blockchain(eth/btc),  and network (mainnet/testnet) );
-2. Generate wallet using BIP39. (Half Finished, register the wallet on the respective blockchain)
+2. Generate wallet using BIP39. (Half Finished, register the wallet on the respective blockchain) (Update: DONE)
 3. Store wallet's info in mongoose. (DONE)
-4. Import wallet from another cryptocurrencies.
+4. Import wallet from another cryptocurrencies. 
 5. Use same menmonic code to generate more wallets.
-6. Show the list of all wallets.
+6. Show the list of all wallets. (DONE)
 
