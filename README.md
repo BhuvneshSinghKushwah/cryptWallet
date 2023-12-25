@@ -36,11 +36,15 @@ npm start
 
 # Mongodb Storage
 <img width="954" alt="image" src="https://github.com/BhuvneshSinghKushwah/cryptWallet/assets/74913365/a4935daf-0ab5-4dbe-bf51-8b23cd630435">
+
 # Create Wallet API
 <img width="778" alt="image" src="https://github.com/BhuvneshSinghKushwah/cryptWallet/assets/74913365/c3445db9-b50c-4b34-91b0-7a9a8018aa8a">
+
 # check balance API
 <img width="784" alt="image" src="https://github.com/BhuvneshSinghKushwah/cryptWallet/assets/74913365/738c7fe6-384c-4344-a4f0-a0bafc366ccd">
+
 <img width="786" alt="image" src="https://github.com/BhuvneshSinghKushwah/cryptWallet/assets/74913365/9e48b17c-a6b9-4ad5-a66d-2b9d369ce431">
+
 # See Wallets API
 <img width="790" alt="image" src="https://github.com/BhuvneshSinghKushwah/cryptWallet/assets/74913365/636d784c-6957-45a0-963e-c31ce7c27a8f">
 
